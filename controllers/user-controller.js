@@ -112,7 +112,7 @@ addFriend({ params }, res) {
         .catch(err => res.json(err));
     })
     .catch(err => res.json(err));
-};
+},
 
 deleteFriend({ params }, res) {
   User.findOneAndUpdate(

@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 const UserSchema = new Schema(
     {
         username: {
-            Type: String,
+            type: String,
             required: true,
             trim: true,
             unique: true

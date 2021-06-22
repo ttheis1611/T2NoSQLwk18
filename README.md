@@ -26,11 +26,11 @@ Express, Mongoose
 To run the program, use npm run start to create the localhost:3004. 
 
 Video of routes
-[NoSQLvidLink](https://drive.google.com/file/d/1tqBBB7yECW9M2mgzq6PBMsSO2ITPmIOz/view)
-![VidPreView](https://drive.google.com/file/d/1tqBBB7yECW9M2mgzq6PBMsSO2ITPmIOz/preview)
+* [NoSQLvidLink](https://drive.google.com/file/d/1tqBBB7yECW9M2mgzq6PBMsSO2ITPmIOz/view)
+* [VidPreView](https://drive.google.com/file/d/1tqBBB7yECW9M2mgzq6PBMsSO2ITPmIOz/preview)
   
 ### Screenshots
-![Insomnia CRUD methods](./assets/images/InsomniaScreenShot.png)
+![Insomnia CRUD methods](./assets/images/InsomniaScreenShot.PNG)
 
 Insomnia 
 

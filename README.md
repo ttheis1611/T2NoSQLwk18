@@ -30,7 +30,7 @@ Video of routes
 ![VidPreView](https://drive.google.com/file/d/1tqBBB7yECW9M2mgzq6PBMsSO2ITPmIOz/preview)
   
 ### Screenshots
-![Insomnia CRUD methods](/assets/images/InsomniaScreenShot.png)
+![Insomnia CRUD methods](./assets/images/InsomniaScreenShot.png)
 
 Insomnia 
 

@@ -63,26 +63,50 @@ const thoughtController = {
       .catch(err => res.status(400).json(err));
   },
 
+  // removeThought({ params }, res) {
+  //   Thought.findOneAndDelete({ _id: params.id })
+  //     .then(dbThoughtData => {
+  //       if (!dbThoughtData) {
+  //         res.status(404).json({ message: 'No thought found with this id' });
+  //         return;
+  //       }
+  //       // delete the reference to deleted thought in user's thought array
+  //       User.findOneAndUpdate(
+  //         { username: dbThoughtData.username },
+  //         { $pull: { thoughts: params.id } }
+  //       )
+  //         .then(() => {
+  //           res.json({ message: 'Successfully deleted the thought' });
+  //         })
+  //         res.json(dbUserData); //.catch(err => res.status(500).json(err));
+  //     })
+  //     .catch(err => res.status(500).json(err));
+  // },
+
   removeThought({ params }, res) {
-    // delete the thought
     Thought.findOneAndDelete({ _id: params.id })
-      .then(dbThoughtData => {
-        if (!dbThoughtData) {
-          res.status(404).json({ message: 'No thought found with this id' });
+      .then(deletedThought => {
+        if (!deletedThought) {
+          return res.status(404).json({ message: 'No thought with this id!' });
+        }
+        return User.findOneAndUpdate(
+          { _id: params.UserId },
+          { $pull: { thoughts: params.thoughtId } },
+          { new: true }
+        );
+      })
+      .then(dbUserData => {
+        if (!dbUserData) {
+          res.status(404).json({ message: 'No user found with this id!' });
           return;
         }
-        // delete the reference to deleted thought in user's thought array
-        User.findOneAndUpdate(
-          { username: dbThoughtData.username },
-          { $pull: { thoughts: params.id } }
-        )
-          .then(() => {
-            res.json({ message: 'Successfully deleted the thought' });
-          })
-          .catch(err => res.status(500).json(err));
+        res.json(dbThoughtData);
       })
-      .catch(err => res.status(500).json(err));
-  },
+      .catch(err => res.json(err));
+    },
+
+
+
 
   // add reaction to thought
   addReaction({ params, body }, res) {

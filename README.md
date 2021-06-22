@@ -35,6 +35,7 @@ Be kind to each other!
   
 ## Credits
 * [Kyle Reynolds](https://github.com/reynolkb)
+* Andy Mendez: thanks for the help!
 
   
 ## Tests
